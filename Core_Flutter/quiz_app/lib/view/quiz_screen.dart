@@ -13,7 +13,7 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     final quizController = Provider.of<QuizController>(context);
-    //currentQuestionIndex < questionList
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -27,24 +27,20 @@ class _QuizScreenState extends State<QuizScreen> {
         centerTitle: true,
         backgroundColor: Colors.blue,
       ),
-      body: quizController.currentQuestionIndex <quizController.questionList.length
-      ?questionScreen() :resultScreen(),
+      body: quizController.currentQuestionIndex <
+              quizController.questionList.length
+          ? questionScreen(quizController)
+          : resultScreen(quizController),
     );
   }
 }
 
-Widget questionScreen() {
-    final quizController = Provider.of<QuizController>(context);
-
+Widget questionScreen(QuizController quizController) {
   return Column(
-    children: [
-
-    ],
+    children: [],
   );
 }
 
-Widget resultScreen() {
-return 
+Widget resultScreen(QuizController quizController) {
+  return Column();
 }
-
-
